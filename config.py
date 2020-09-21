@@ -23,6 +23,19 @@ class ProdConfig(Config):
     Production config child class
 
     Args:
-        Config: The parent config clss with general config classes
+        Config: The parent config class with general config classes
     """
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
+
+
+class TestConfig(Config):
+    """
+    Testing config child class
+
+    Args:
+        Config: The parent config class with general config classes
+    """
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
+    DEBUG = True
+
+    
