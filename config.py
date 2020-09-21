@@ -18,3 +18,11 @@ class Config:
     MAIL_PASSWORD = os.envirot("MAIL_PASSWORD")
 
 
+class ProdConfig(Config):
+    """
+    Production config child class
+
+    Args:
+        Config: The parent config clss with general config classes
+    """
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
