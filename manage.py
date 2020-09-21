@@ -24,5 +24,5 @@ def make_shell_sontext():
     return dict(app=app, db=db, User=User, Role=Role)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     manager.run()
