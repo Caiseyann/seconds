@@ -25,7 +25,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent config class with general config classes
     """
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 
 class TestConfig(Config):
@@ -35,7 +35,7 @@ class TestConfig(Config):
     Args:
         Config: The parent config class with general config classes
     """
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     DEBUG = True
 
 
@@ -46,7 +46,7 @@ class DevConfig(Config):
     Args:
         Config: The parent config class with general config settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     DEBUG = True
 
 
