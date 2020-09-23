@@ -10,12 +10,12 @@ class Config:
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
 
 
-    #e-mail configurations
+    #e- configurations
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = ("MAIL_USERNAME")
-    MAIL_PASSWORD = os.envirot("MAIL_PASSWORD")
+    MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
 
 class ProdConfig(Config):
@@ -37,6 +37,18 @@ class TestConfig(Config):
     """
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
     DEBUG = True
+
+
+class DevConfig(Config):
+    '''
+    Dev config child class
+
+    Args:
+        Config: The parent config class with general config settings
+    '''
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:password@localhost/second'
+    DEBUG = True
+
 
 config_options = {
     'development': DevConfig,

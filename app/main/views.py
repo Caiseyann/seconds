@@ -22,7 +22,7 @@ def index():
     product_pitches = Pitch.get_pitches('product')
     promotion_pitches = Pitch.get_pitches('promotion')
 
-    return render_template('index.html',title = title, interview = interview_piches, product = product_piches, promotion = promotion_pitches)
+    return render_template('index.html',title=title, interview=interview_pitches, product=product_pitches, promotion=promotion_pitches)
 
 
 @main.route('/user/<uname>')
