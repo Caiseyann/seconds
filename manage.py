@@ -2,11 +2,12 @@ from app import create_app, db
 from app.models import User, Role
 from flask_script import Manager, Server
 from flask_migrate import Migrate, MigrateCommand
-
+from flask_wtf.csrf import CSRFProtect, CSRFError
 
 #Creating app instance
 app = create_app('development')
 
+csrf = CSRFProtect(app)
 
 manager = Manager(app)
 manager.add_command('server', Server)
