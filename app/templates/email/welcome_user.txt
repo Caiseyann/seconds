@@ -1,3 +1,3 @@
 Hello {{user.username}}
-Welcome to the M.M.A Pitcher
+Welcome to the .A Pitcher
 Your registration has been acknowledged.
